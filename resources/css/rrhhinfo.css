@@ -81,48 +81,6 @@ footer p {
 }
 
 /* Botones */
-
-/* From Uiverse.io by WhiteNervosa */ 
-.buttonyrz2 {
-  font-size: 18px;
-  color: #e1e1e1;
-  font-family: inherit;
-  font-weight: 800;
-  cursor: pointer;
-  position: relative;
-  border: none;
-  background: none;
-  text-transform: uppercase;
-  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 400ms;
-  transition-property: color;
-}
-
-.buttontrz2:focus,
-.buttonyrz2:hover {
-  color: #fff;
-}
-
-.buttonyrz2:focus:after,
-.buttonyrz2:hover:after {
-  width: 100%;
-  left: 0%;
-}
-
-.buttonyrz2:after {
-  content: "";
-  pointer-events: none;
-  bottom: -2px;
-  left: 50%;
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background-color: #fff;
-  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 400ms;
-  transition-property: width, left;
-}
-
 .buttonyrz {
   padding: 0.6em 2em;
   border: none;
@@ -190,23 +148,69 @@ footer p {
   border-radius: 10px;
 }
 
-.menu {
+.textcontainer {
+  border-radius: 35px;
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px 32px;
+  background-color: rgba(52, 52, 52, 0.90);
   display: flex;
-  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
 }
 
-.menu select {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #3498db;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  border: #00ffd5a4 1px solid;
+.textcontainer h1 {
+  color: #fff;
+  font-size: 2.4em;
+  margin-bottom: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
-.menu select option {
-  background-color: #3498db;
-  color: white;
-  border: #00ffd5a4 1px solid;
+
+.textcontainer h2 {
+  color: #e0e0e0;
+  font-size: 1.7em;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.textcontainer p {
+  color: #f5f5f5;
+  font-size: 1.15em;
+  line-height: 1.7;
+  margin: 10px 0 20px 0;
+  text-align: justify;
+}
+
+.textcontainer ul {
+  color: #fafafa;
+  font-size: 1.1em;
+  margin-top: 10px;
+  margin-bottom: 18px;
+  padding-left: 28px;
+}
+
+.textcontainer ul li {
+  margin-bottom: 10px;
+  padding-left: 2px;
+  list-style-type: disc;
+  transition: background 0.2s;
+}
+
+.textcontainer ul li:hover {
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+}
+
+.title {
+  color: #fff;
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  text-align: center;
+  align-self: center;
 }
