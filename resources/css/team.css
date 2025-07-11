@@ -1,0 +1,341 @@
+/* 
+    colores
+
+    celeste header - footer card: #3498db
+
+*/
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(33, 33, 33);
+}
+
+/* -------- superior -------- */
+
+header {
+  background-color: #3498db;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #dddddd70;
+}
+
+.icono {
+  margin-right: 20px;
+}
+
+.icono img {
+  width: 110px;
+  height: 100px;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.contenido nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.contenido nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contenido ul li a:hover {
+  color: #d1e7ff;
+}
+
+/* ------------- */
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(42, 42, 42, 0.747);
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border-radius: 20px;
+}
+
+footer {
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    align-items: center;
+    border-bottom: 1px solid #dddddd94;
+}
+
+/* Botones */
+.buttonyrz {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 40%;
+}
+
+.buttonyrz:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.buttonyrz:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* Variante boton */
+
+.buttonyrzvar {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buttonyrzvar:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ffffff,
+    #f0f0f0,
+    #e8e8e8,
+    #d0d0d0,
+    #b8b8b8,
+    #a0a0a0,
+    #888888,
+    #707070,
+    #585858
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.buttonyrzvar:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* Tarjetas */
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+ width: 190px;
+ height: 254px;
+ border-radius: 30px;
+ background: #212121;
+ box-shadow: 15px 15px 30px rgb(25, 25, 25),
+             -15px -15px 30px rgb(60, 60, 60);
+}
+
+.contenedorespecial {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tarjeta {
+    background-color: rgb(50, 50, 50);
+    border: 1px solid #ddd;
+    border: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 15px;
+    padding: 10px;
+    width: calc(33.33% - 40px);
+    border-radius: 15px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tarjetaespecial {
+    background-color: #0f74b8;
+    border: 1px solid #ddd;
+    border: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding: 20px;
+    width: calc(33.33% - 40px);
+    border-radius: 15px;
+}
+
+.tarjeta img {
+    border: 50%;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.tarjeta h2 {
+    font: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.tarjeta p {
+    font: 16px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.boxcontact input{
+  width: 100%;
+  max-width: 220px;
+  height: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.boxcontact input:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+.boxcontact input:active {
+  transform: scale(0.95);
+}
+
+.boxcontact input:focus {
+  border: 2px solid grey;
+}
+
+.boxcontact textarea{
+  width: 100%;
+  max-width: 220px;
+  height: 80px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.boxcontact textarea:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+.boxcontact textarea:active {
+  transform: scale(0.95);
+}
+
+.boxcontact textarea:focus {
+  border: 2px solid grey;
+}
+
+.perfil {
+  text-align: right;
+  align-items: right;
+  align-content: right;
+}
+

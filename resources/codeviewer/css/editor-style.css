@@ -1,0 +1,153 @@
+/* Colores Palenight (Mid Contrast) */
+:root {
+    --palenight-bg: #292D3E; /* Fondo principal del código */
+    --palenight-comment: #676E95; /* Comentarios */
+    --palenight-string: #A0C6FF; /* Strings */
+    --palenight-keyword: #C792EA; /* Keywords (morado) */
+    --palenight-function: #FFCB6B; /* Funciones (naranja/amarillo) */
+    --palenight-variable: #82AAFF; /* Variables (azul) */
+    --palenight-number: #F78C6C; /* Números (naranja) */
+    --palenight-operator: #89DDFF; /* Operadores (azul claro) */
+    --palenight-text: #ABB2BF; /* Texto general (gris claro) */
+    /* Nuevas variables para el scrollbar si las quieres hacer más dinámicas */
+    --scrollbar-thumb-color: #676E95;
+    --scrollbar-track-color: #353A50; /* Un color ligeramente diferente para la pista */
+    --scrollbar-thumb-hover-color: #82AAFF;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centra el bloque de código horizontalmente */
+    align-items: center; /* Centra el bloque de código verticalmente */
+    min-height: 100vh; /* Ocupa al menos el alto de la ventana */
+    background-color: #1a1e2b; /* Un color de fondo oscuro para el body, similar al de VS Code */
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace; /* Fuentes de editor */
+    font-size: 0.95em;
+    line-height: 1.5;
+    /* Asegurarse de que el body no tenga scrollbars a menos que sea necesario */
+    overflow: hidden; /* Oculta el scrollbar del body si no es intencional que desborde */
+}
+
+.code-block-container {
+    background-color: var(--palenight-bg);
+    margin: 10px; /* Margen en todos los lados */
+    padding: 20px; /* Padding alrededor del código */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sutil sombra */
+    max-width: 90%; /* Limita el ancho para que no se extienda demasiado */
+    height: 80vh; /* Establece una altura fija para el contenedor para que el scroll aparezca */
+    overflow: auto; /* Permite desplazamiento si el código es muy largo */
+    color: var(--palenight-text);
+
+    /* --- ESTILOS PARA EL SCROLLBAR DEL CONTENEDOR DE CÓDIGO --- */
+
+    /* Para navegadores basados en WebKit (Chrome, Safari, Edge, Opera) */
+    &::-webkit-scrollbar {
+        width: 10px; /* Ancho de la barra de desplazamiento vertical */
+        height: 10px; /* Altura de la barra de desplazamiento horizontal */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb-color); /* Color del pulgar */
+        border-radius: 5px; /* Borde redondeado del pulgar */
+        border: 2px solid var(--palenight-bg); /* Borde alrededor del pulgar */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: var(--scrollbar-thumb-hover-color); /* Color del pulgar al pasar el ratón */
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--scrollbar-track-color); /* Color de la pista */
+        border-radius: 5px; /* Borde redondeado de la pista */
+    }
+
+    /* Para Firefox */
+    scrollbar-width: thin; /* 'auto' | 'thin' | 'none' */
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color); /* pulgar pista */
+}
+
+pre[class*="language-"] {
+    background-color: var(--palenight-bg); /* Asegura que el fondo sea el del tema */
+    padding: 0; /* Sin padding extra del pre */
+    margin: 0; /* Sin margen extra del pre */
+    white-space: pre-wrap; /* Permite que el texto se envuelva */
+    word-break: break-word; /* Rompe palabras largas si es necesario */
+}
+
+code[class*="language-"] {
+    color: var(--palenight-text);
+}
+
+/* Estilos para Prism.js (Resaltado de sintaxis) - Sin cambios */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: var(--palenight-comment);
+}
+
+.token.punctuation {
+    color: var(--palenight-text);
+}
+
+.token.namespace {
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: var(--palenight-number);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: var(--palenight-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: var(--palenight-operator);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: var(--palenight-keyword);
+}
+
+.token.function,
+.token.class-name {
+    color: var(--palenight-function);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: var(--palenight-variable);
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
