@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Pantalla de Carga</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../resources/css/yrz_buttons.css">
 </head>
 <body>
 
@@ -15,9 +16,27 @@
   </div>
 
   <!-- Contenido principal -->
-  <div class="main-content">
-    <h1>Bienvenido a mi sitio web</h1>
-    <p>Este es el contenido que aparece después de la carga.</p>
-  </div>
+  <main>
+        <div class="contenedorespecial">
+            <div class="tarjetaespecial">
+                <center><h2>Phantom DB Manager</h2><center>
+                <img src="resources/phantomw.png" alt="Phantomgblogo">
+            <div class="boxcontact" id="contactanos">
+                <form>
+                <input type="text" placeholder="Host" id="Host" required><br>
+                <br>
+                <input type="Text" placeholder="Usuario" id="Usuario" required><br>
+                <br>
+                <input type="password" placeholder="Contraseña" id="password" required><br>
+                <br>
+                <input type="text" placeholder="DataBase" id="database" required>
+                <br>
+                <button class="PurpleLightButton">Conectar</button>
+                </form>
+                
+            </div>
+        </div>
+  </main>
 
   <script src="../resources/scripts/Loadingscreen.js"></script>
+</body>

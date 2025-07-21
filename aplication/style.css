@@ -74,16 +74,208 @@ body, html {
   }
 }
 
-/* Contenido de la web (se ve después del loader) */
-.main-content {
-  display: none;
-  height: 100vh;
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  color: white;
-  font-family: sans-serif;
-  padding: 2rem;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(33, 33, 33);
 }
 
-body.loaded .main-content {
-  display: block;
+header {
+  background-color: #3498db;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #dddddd70;
+}
+
+.icono {
+  margin-right: 20px;
+}
+
+.icono img {
+  width: 110px;
+  height: 100px;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.contenido nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.contenido nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contenido ul li a:hover {
+  color: #ffe600;
+}
+
+main {
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(42, 42, 42, 0.747);
+  margin-top: 1%;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 20px;
+  align-content: center;
+}
+
+footer {
+  margin-top: 10px;
+  background-color: #3498db00;
+  color: white;
+  text-align: center;
+  align-items: center;
+  border-bottom: 1px solid #dddddd94;
+}
+
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 190px;
+  height: 254px;
+  border-radius: 30px;
+  background: #212121;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25),
+              -15px -15px 30px rgb(60, 60, 60);
+}
+
+.contenedorespecial {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   
+}
+
+.tarjeta {
+  background-color: rgb(50, 50, 50);
+  border: 1px solid #ddd;
+  border: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.651);
+  margin: 15px;
+  padding: 10px;
+  width: calc(33.33% - 40px);
+  border-radius: 15px;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.tarjeta:hover {
+  background-color: rgb(50, 50, 50);
+  border: 1px solid #ddd;
+  border: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 15px;
+  padding: 10px;
+  width: calc(33.33% - 40px);
+  border-radius: 15px;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.tarjetaespecial {
+  position: relative;
+  background-color: #111;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 20px;
+  margin: 20px;
+  width: calc(33.33% - 40px);
+  border-radius: 16px;
+  z-index: 0;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 2px #4a2c5b,       /* borde base profundo */
+    0 0 10px #5e3d71,        /* resplandor medio */
+    0 0 20px #633d72,        /* halo exterior tenue */
+    0 0 35px #482e58;        /* contorno lejano difuso */
+  transition: box-shadow 0.3s ease;
+}
+
+.tarjetaespecial:hover {
+  box-shadow:
+    0 0 0 2px #5c3c69,
+    0 0 14px #674377,
+    0 0 28px #704b7e,
+    0 0 45px #50355f;
+}
+
+.tarjeta img {
+  border: 50%;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(88, 88, 88, 0.959);
+}
+
+.tarjeta h2 {
+  font: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.tarjeta p {
+  font: 16px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.boxcontact input {
+  width: 100%;
+  max-width: 220px;
+  height: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.boxcontact input:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+.boxcontact input:active {
+  transform: scale(0.95);
+}
+
+.boxcontact input:focus {
+  border: 2px solid grey;
+}
+
+.perfil {
+  text-align: right;
+  align-items: right;
+  align-content: right;
 }
