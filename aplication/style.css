@@ -1,0 +1,89 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Contenedor del loader */
+.loader-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  animation: fadeOut 1s ease 4s forwards;
+}
+
+/* Círculo central */
+.loader-circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: rgba(85, 85, 85, 0.555);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+/* Divisiones diagonales */
+.loader-overlay::before,
+.loader-overlay::after {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background-color: #222;
+  z-index: 1;
+  transform: rotate(45deg);
+  transform-origin: center;
+  animation: slideOut 2s ease 2s forwards;
+}
+
+.loader-overlay::after {
+  transform: rotate(-45deg);
+  background-color: #333;
+}
+
+/* Animaciones */
+@keyframes slideOut {
+  to {
+    transform: translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Contenido de la web (se ve después del loader) */
+.main-content {
+  display: none;
+  height: 100vh;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: white;
+  font-family: sans-serif;
+  padding: 2rem;
+}
+
+body.loaded .main-content {
+  display: block;
+}
