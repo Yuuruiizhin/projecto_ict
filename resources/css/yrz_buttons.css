@@ -148,6 +148,7 @@ Minimalist-Simple-Button / Boton Simple - Texto Desctacado (hover)
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
+  margin-top: 20px;
 }
 
 .Minimalist-Simple-Button:focus,
@@ -174,3 +175,36 @@ Minimalist-Simple-Button / Boton Simple - Texto Desctacado (hover)
   transition-duration: 400ms;
   transition-property: width, left;
 }
+
+/*------------ Boton Flotante para autoscroll ------------*/
+
+.AutoScrollButton {
+  position: fixed; /* Posición fija en la pantalla */
+  bottom: 20px; /* Se mantiene 20px desde la parte inferior de la pantalla */
+  right: 20px; /* Se mantiene 20px desde el lado derecho de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25%; /* Hace que el botón sea circular */
+  width: 10vh; /* Ancho */
+  height: 10vh; /* Alto (circular) */
+  background: linear-gradient(45deg, #333, #555); /* Gradiente oscuro para dark theme */
+  color: white; /* Texto blanco */
+  font-family: 'Arial', sans-serif; /* Tipo de fuente */
+  font-size: 1.0rem; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  text-decoration: none; /* Elimina la subrayado típica de los enlaces */
+  text-align: center;
+  cursor: pointer; /* El cursor cambia a mano */
+  transition: all 0.3s ease; /* Animación suave en el hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para el efecto flotante */
+  z-index: 9999; /* Asegura que el botón esté sobre otros elementos */
+}
+
+.AutoScrollButton:hover {
+  background: linear-gradient(45deg, #575757, #a1a1a1); /* Gradiente azul al pasar el ratón */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño cuando se pasa el ratón */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en hover */
+}
+
+/*le pedi a chatgpt que lo haga XD*/
