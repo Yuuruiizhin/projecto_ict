@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- Royal Tutorials -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Animado de Inicio de Sesión y Registro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../resources/css/yrz_buttons.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-wrapper sign-in">
+            <form action="">
+                <h2>Iniciar Sesión</h2>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Usuario</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label for="">Contraseña</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Recuérdame</label>
+                </div>
+                <button type="submit" class="Minimalist-Simple-Button">Entrar</button>
+                <div class="signUp-link">
+                    <p>¿No tienes una cuenta? <a href="#" class="signUpBtn-link">Regístrate</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="form-wrapper sign-up">
+            <form action="">
+                <h2>Regístrate</h2>
+                <div class="input-group">
+                    <input type="text" required>
+                    <label for="">Usuario</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" required>
+                    <label for="">Correo Electrónico</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" required>
+                    <label for="">Contraseña</label>
+                </div>
+                <div class="remember">
+                    <label><input type="checkbox"> Acepto los términos y condiciones</label>
+                </div>
+                <button type="submit" class="Minimalist-Simple-Button">Registrarse</button>
+                <div class="signUp-link">
+                    <p>¿Ya tienes una cuenta? <a href="#" class="signInBtn-link">Iniciar Sesión</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        const signInBtnLink = document.querySelector('.signInBtn-link');
+        const signUpBtnLink = document.querySelector('.signUpBtn-link');
+        const wrapper = document.querySelector('.wrapper');
+
+        signUpBtnLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            wrapper.classList.toggle('active');
+        });
+        signInBtnLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            wrapper.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

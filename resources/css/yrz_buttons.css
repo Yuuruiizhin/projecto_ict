@@ -201,6 +201,10 @@ Minimalist-Simple-Button / Boton Simple - Texto Desctacado (hover)
   font-family: inherit;
   font-weight: 800;
   cursor: pointer;
+  /* Add these two lines to center the button */
+  display: block;
+  margin: 0 auto;
+  /* End of centering additions */
   position: relative;
   border: none;
   background: none;
@@ -260,10 +264,15 @@ Minimalist-Simple-Button / Boton Simple - Texto Desctacado (hover)
   z-index: 9999; /* Asegura que el botón esté sobre otros elementos */
 }
 
+.AutoScrollButton img{
+width: 80%;
+height: 80%;
+}
+
 .AutoScrollButton:hover {
   background: linear-gradient(45deg, #575757, #a1a1a1); /* Gradiente azul al pasar el ratón */
   transform: scale(1.1); /* Aumenta ligeramente el tamaño cuando se pasa el ratón */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en hover */
 }
 
-/*le pedi a chatgpt que lo haga XD*/
+/*le pedi a chatgpt que lo haga el autoscroll XD*/
