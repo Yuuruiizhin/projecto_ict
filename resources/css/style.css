@@ -18,7 +18,7 @@ header {
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dddddd70;
 }
 
 .icono {
@@ -52,7 +52,7 @@ header {
 }
 
 .contenido ul li a:hover {
-  color: #d1e7ff;
+  color: #ffe600;
 }
 
 /* ------------- */
@@ -69,6 +69,9 @@ main {
     border-radius: 20px;
 }
 
+main button {
+  margin-bottom: 10px;
+}
 
 footer {
     text-align: center;
