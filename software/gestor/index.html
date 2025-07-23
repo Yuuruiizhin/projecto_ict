@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de BD - HeidiSQL Style</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="db-interface-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-database"></i> Phantom DB Manager</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active"><a href="#"><i class="fas fa-server"></i> Conexiones</a></li>
+                    <li class="nav-item has-submenu">
+                        <div class="nav-item-header">
+                            <span class="nav-toggle collapsed"><i class="fas fa-chevron-right"></i></span>
+                            <a href="#">localhost:3306 (MySQL)</a>
+                        </div>
+                        <ul class="submenu submenu-content">
+                            <li class="submenu-item active"><a href="#" data-db-name="my_database_name"><i class="fas fa-folder-open"></i> my_database_name</a>
+                                <ul class="submenu-item-content">
+                                    <li class="sub-item"><a href="#" data-view="tables"><i class="fas fa-table"></i> TABLAS</a></li>
+                                    <li class="sub-item"><a href="#" data-view="views"><i class="fas fa-eye"></i> VISTAS</a></li>
+                                    <li class="sub-item"><a href="#" data-view="routines"><i class="fas fa-file-invoice"></i> RUTINAS</a></li>
+                                    <li class="sub-item"><a href="#" data-view="events"><i class="fas fa-bolt"></i> EVENTOS</a></li>
+                                    <li class="sub-item"><a href="#" data-view="users"><i class="fas fa-user-friends"></i> USUARIOS</a></li>
+                                    <li class="sub-item"><a href="#" data-view="settings"><i class="fas fa-cogs"></i> CONFIGURACIÓN</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu-item"><a href="#" data-db-name="another_db"><i class="fas fa-folder"></i> another_db</a></li>
+                            <li class="submenu-item"><a href="#" data-db-name="system_db"><i class="fas fa-folder"></i> system_db</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-terminal"></i> Consola SQL</a></li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-file-export"></i> Importar/Exportar</a></li>
+                    <li class="nav-item"><a href="#"><i class="fas fa-cog"></i> Preferencias</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h2><i class="fas fa-table"></i> TABLAS</h2>
+                <div class="header-actions">
+                    <button class="action-button primary create-table-button"><i class="fas fa-plus"></i> Nueva Tabla</button>
+                    <button class="action-button"><i class="fas fa-sync-alt"></i> Refrescar</button>
+                </div>
+            </header>
+
+            <div class="table-list-section">
+                <div class="table-actions-bar">
+                    <input type="text" placeholder="Buscar tabla..." class="search-input">
+                    <button class="action-button icon-button"><i class="fas fa-filter"></i></button>
+                    <button class="action-button icon-button"><i class="fas fa-sort-alpha-down"></i></button>
+                    <button class="action-button icon-button danger"><i class="fas fa-trash-alt"></i> Eliminar Seleccionadas</button>
+                </div>
+
+                <div class="table-list">
+                    <div class="table-row header-row">
+                        <div class="col col-select"><input type="checkbox"></div>
+                        <div class="col col-name">Nombre</div>
+                        <div class="col col-rows">Filas</div>
+                        <div class="col col-size">Tamaño</div>
+                        <div class="col col-engine">Motor</div>
+                        <div class="col col-comment">Comentario</div>
+                        <div class="col col-actions">Acciones</div>
+                    </div>
+
+                    <div class="table-row" data-table-name="usuarios">
+                        <div class="col col-select"><input type="checkbox"></div>
+                        <div class="col col-name">usuarios</div>
+                        <div class="col col-rows">1,245</div>
+                        <div class="col col-size">1.2 MB</div>
+                        <div class="col col-engine">InnoDB</div>
+                        <div class="col col-comment">Tabla de usuarios registrados</div>
+                        <div class="col col-actions">
+                            <button class="btn-icon edit-table-button" data-table-name="usuarios"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon view-content-button" data-table-name="usuarios"><i class="fas fa-eye"></i></button>
+                            <button class="btn-icon danger"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="table-row" data-table-name="productos">
+                        <div class="col col-select"><input type="checkbox"></div>
+                        <div class="col col-name">productos</div>
+                        <div class="col col-rows">8,760</div>
+                        <div class="col col-size">5.8 MB</div>
+                        <div class="col col-engine">InnoDB</div>
+                        <div class="col col-comment">Catálogo de productos del ecommerce</div>
+                        <div class="col col-actions">
+                            <button class="btn-icon edit-table-button" data-table-name="productos"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon view-content-button" data-table-name="productos"><i class="fas fa-eye"></i></button>
+                            <button class="btn-icon danger"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="table-row" data-table-name="pedidos">
+                        <div class="col col-select"><input type="checkbox"></div>
+                        <div class="col col-name">pedidos</div>
+                        <div class="col col-rows">2,100</div>
+                        <div class="col col-size">2.1 MB</div>
+                        <div class="col col-engine">InnoDB</div>
+                        <div class="col col-comment">Registro de órdenes de compra</div>
+                        <div class="col col-actions">
+                            <button class="btn-icon edit-table-button" data-table-name="pedidos"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon view-content-button" data-table-name="pedidos"><i class="fas fa-eye"></i></button>
+                            <button class="btn-icon danger"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="table-row" data-table-name="categorias">
+                        <div class="col col-select"><input type="checkbox"></div>
+                        <div class="col col-name">categorias</div>
+                        <div class="col col-rows">55</div>
+                        <div class="col col-size">0.1 MB</div>
+                        <div class="col col-engine">InnoDB</div>
+                        <div class="col col-comment">Clasificación de productos</div>
+                        <div class="col col-actions">
+                            <button class="btn-icon edit-table-button" data-table-name="categorias"><i class="fas fa-edit"></i></button>
+                            <button class="btn-icon view-content-button" data-table-name="categorias"><i class="fas fa-eye"></i></button>
+                            <button class="btn-icon danger"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-panel">
+                <div class="tab-header">
+                    <button class="tab-button active" data-tab="structure">Estructura</button>
+                    <button class="tab-button" data-tab="content">Contenido</button>
+                    <button class="tab-button" data-tab="sql">SQL</button>
+                    <button class="tab-button" data-tab="indices">Índices</button>
+                    <button class="tab-button" data-tab="relations">Relaciones</button>
+                </div>
+                <div class="tab-content bottom-panel-content show" data-tab-name="structure">
+                    <div class="structure-content">
+                        <div class="structure-table">
+                            <div class="structure-row header-row">
+                                <div class="col">Campo</div>
+                                <div class="col">Tipo</div>
+                                <div class="col">Nulo</div>
+                                <div class="col">Clave</div>
+                                <div class="col">Predeterminado</div>
+                                <div class="col">Extra</div>
+                                <div class="col">Acciones</div>
+                            </div>
+                            <div class="structure-row">
+                                <div class="col">id</div>
+                                <div class="col">INT(11)</div>
+                                <div class="col">No</div>
+                                <div class="col">PRI</div>
+                                <div class="col">NULL</div>
+                                <div class="col">auto_increment</div>
+                                <div class="col">
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon danger"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="structure-row">
+                                <div class="col">nombre</div>
+                                <div class="col">VARCHAR(255)</div>
+                                <div class="col">No</div>
+                                <div class="col"></div>
+                                <div class="col">NULL</div>
+                                <div class="col"></div>
+                                <div class="col">
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon danger"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="structure-row">
+                                <div class="col">email</div>
+                                <div class="col">VARCHAR(255)</div>
+                                <div class="col">Sí</div>
+                                <div class="col">UNI</div>
+                                <div class="col">NULL</div>
+                                <div class="col"></div>
+                                <div class="col">
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon danger"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="structure-row">
+                                <div class="col">fecha_registro</div>
+                                <div class="col">DATETIME</div>
+                                <div class="col">No</div>
+                                <div class="col"></div>
+                                <div class="col">CURRENT_TIMESTAMP</div>
+                                <div class="col"></div>
+                                <div class="col">
+                                    <button class="btn-icon"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-icon danger"><i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="structure-actions">
+                            <button class="action-button primary"><i class="fas fa-plus"></i> Añadir Campo</button>
+                            <button class="action-button"><i class="fas fa-key"></i> Gestionar Índices</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content bottom-panel-content hide" data-tab-name="content">
+                    <div class="content-content">
+                        <div class="content-table-wrapper">
+                            <table class="fake-data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Email</th>
+                                        <th>Fecha Registro</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>Juan Pérez</td><td>juan@example.com</td><td>2023-01-15</td></tr>
+                                    <tr><td>2</td><td>Ana Gómez</td><td>ana@example.com</td><td>2023-02-20</td></tr>
+                                    <tr><td>3</td><td>Luis Torres</td><td>luis@example.com</td><td>2023-03-01</td></tr>
+                                    <tr><td>4</td><td>Marta Díaz</td><td>marta@example.com</td><td>2023-04-10</td></tr>
+                                    <tr><td>5</td><td>Pedro Ruiz</td><td>pedro@example.com</td><td>2023-05-05</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content bottom-panel-content hide" data-tab-name="sql">
+                    <div class="sql-content">
+                        <textarea class="sql-editor" readonly>
+SELECT id, nombre, email, fecha_registro
+FROM usuarios
+WHERE fecha_registro >= '2023-01-01'
+ORDER BY fecha_registro DESC
+LIMIT 10;
+
+-- Ejemplo de INSERT
+-- INSERT INTO productos (nombre, precio, stock)
+-- VALUES ('Laptop Gamer', 1200.00, 50);
+
+-- Ejemplo de UPDATE
+-- UPDATE usuarios
+-- SET email = 'nuevo@email.com'
+-- WHERE id = 1;
+                        </textarea>
+                    </div>
+                </div>
+
+                 <div class="tab-content bottom-panel-content hide" data-tab-name="indices">
+                    <div class="indices-content">
+                        <p>No se encontraron índices para la tabla seleccionada.</p>
+                        <p><i>(Este es un contenido de ejemplo para la pestaña de Índices)</i></p>
+                    </div>
+                </div>
+
+                 <div class="tab-content bottom-panel-content hide" data-tab-name="relations">
+                    <div class="relations-content">
+                        <p>No se encontraron relaciones para la tabla seleccionada.</p>
+                        <p><i>(Este es un contenido de ejemplo para la pestaña de Relaciones)</i></p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <div class="overlay hide"></div>
+
+    <div class="modal hide">
+        <div class="modal-header">
+            <h3 id="modal-title">Crear Nueva Tabla</h3>
+            <button class="modal-close-button"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <form class="table-form">
+                <div class="form-group">
+                    <label for="table-name">Nombre de la Tabla:</label>
+                    <input type="text" id="table-name" placeholder="Ej: productos" required>
+                </div>
+                <div class="form-group">
+                    <label for="table-engine">Motor de Almacenamiento:</label>
+                    <select id="table-engine">
+                        <option value="InnoDB">InnoDB</option>
+                        <option value="MyISAM">MyISAM</option>
+                        <option value="CSV">CSV</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="table-comment">Comentario:</label>
+                    <textarea id="table-comment" rows="3" placeholder="Descripción de la tabla..."></textarea>
+                </div>
+
+                <h4>Campos de la Tabla:</h4>
+                <div id="fields-container">
+                    <div class="field-row">
+                        <input type="text" class="field-name" value="id" placeholder="Nombre del Campo">
+                        <select class="field-type">
+                            <option>INT</option>
+                            <option>VARCHAR</option>
+                            <option>TEXT</option>
+                            <option>DATETIME</option>
+                            <option>BOOLEAN</option>
+                        </select>
+                        <label><input type="checkbox" checked> PK</label>
+                        <label><input type="checkbox"> Nulo</label>
+                        <button class="btn-icon danger remove-field"><i class="fas fa-minus-circle"></i></button>
+                    </div>
+                </div>
+                <button type="button" class="action-button secondary add-field-button"><i class="fas fa-plus"></i> Añadir Campo</button>
+
+                <div class="modal-actions">
+                    <button type="submit" class="action-button primary"><i class="fas fa-save"></i> Guardar Tabla</button>
+                    <button type="button" class="action-button modal-close-button"><i class="fas fa-times"></i> Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -133,7 +133,6 @@ main {
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  background-color: rgba(42, 42, 42, 0.747);
   margin-top: 1%;
   margin-left: 2%;
   margin-right: 2%;
@@ -143,7 +142,7 @@ main {
 
 footer {
   margin-top: 10px;
-  background-color: #3498db00;
+  background-color: rgb(33, 33, 33);
   color: white;
   text-align: center;
   align-items: center;
@@ -154,15 +153,6 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.card {
-  width: 190px;
-  height: 254px;
-  border-radius: 30px;
-  background: #212121;
-  box-shadow: 15px 15px 30px rgb(25, 25, 25),
-              -15px -15px 30px rgb(60, 60, 60);
 }
 
 .contenedorespecial {
