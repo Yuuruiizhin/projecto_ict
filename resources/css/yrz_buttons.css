@@ -212,7 +212,6 @@ Minimalist-Simple-Button / Boton Simple - Texto Desctacado (hover)
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
-  box-shadow: 0 0 10px #674377
 }
 
 .Minimalist-Simple-Button:focus,
