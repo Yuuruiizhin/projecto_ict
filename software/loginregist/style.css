@@ -86,20 +86,6 @@ h2{
 .remember label input{
     accent-color: #674377;
 }
-button{
-    position: relative;
-    width: 100%;
-    height: 40px;
-    background: #674377;
-    box-shadow: 0 0 10px #674377;
-    font-size: 16px;
-    color: #ffffff;
-    font-weight: 500;
-    cursor: pointer;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-}
 .signUp-link{
     font-size: 14px;
     text-align: center;
